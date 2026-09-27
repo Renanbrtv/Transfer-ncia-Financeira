@@ -1,0 +1,83 @@
+.timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.event {
+  position: relative;
+  display: flex;
+  gap: 14px;
+  padding-bottom: 18px;
+}
+
+.event:last-child {
+  padding-bottom: 0;
+}
+
+/* Linha vertical ligando os marcadores. */
+.event:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 16px;
+  bottom: 0;
+  width: 2px;
+  background: var(--line);
+}
+
+.marker {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  margin-top: 4px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 2px solid var(--surface);
+  box-shadow: 0 0 0 1px var(--line-strong);
+  background: var(--ink-faint);
+}
+
+.done .marker {
+  background: var(--positive);
+  box-shadow: 0 0 0 1px var(--positive);
+}
+
+.pending .marker {
+  background: var(--surface);
+  box-shadow: 0 0 0 2px var(--info);
+}
+
+.negative .marker {
+  background: var(--negative);
+  box-shadow: 0 0 0 1px var(--negative);
+}
+
+.neutral .marker {
+  background: var(--neutral);
+  box-shadow: 0 0 0 1px var(--neutral);
+}
+
+.label {
+  font-weight: 500;
+}
+
+.negative .label {
+  color: var(--negative);
+}
+
+.time {
+  color: var(--ink-muted);
+  font-size: 12.5px;
+}
+
+.skipped .marker {
+  background: var(--surface);
+  box-shadow: 0 0 0 1px var(--line-strong);
+}
+
+.skipped .label,
+.skipped .time {
+  color: var(--ink-faint);
+  text-decoration: line-through;
+}

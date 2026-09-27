@@ -1,0 +1,36 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.mark {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  color: var(--brand);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.tagline {
+  font-size: 11.5px;
+  line-height: 1.3;
+  color: var(--ink-muted);
+  /* Quebra em duas linhas se não couber, em vez de vazar para fora da sidebar. */
+  white-space: normal;
+  overflow-wrap: anywhere;
+}

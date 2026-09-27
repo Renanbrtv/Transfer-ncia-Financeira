@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>12.0</LangVersion>
+    <!-- CS1591: nem todo membro público precisa de XML doc; ela é gerada apenas para alimentar o Swagger. -->
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,11 @@
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.accounts {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}

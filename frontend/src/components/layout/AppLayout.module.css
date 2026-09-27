@@ -1,0 +1,52 @@
+.shell {
+  min-height: 100vh;
+}
+
+.main {
+  min-height: 100vh;
+  margin-left: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  width: 100%;
+  max-width: var(--content-max);
+  padding: 28px 28px 56px;
+  outline: none;
+}
+
+.skipLink {
+  position: absolute;
+  left: 12px;
+  top: -48px;
+  z-index: 50;
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  border: 0;
+  background: var(--ink);
+  color: #fff;
+  cursor: pointer;
+}
+
+.skipLink:focus {
+  top: 12px;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 25;
+  background: rgba(21, 32, 28, 0.32);
+}
+
+@media (max-width: 960px) {
+  .main {
+    margin-left: 0;
+  }
+
+  .content {
+    padding: 20px 16px 48px;
+  }
+}

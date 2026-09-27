@@ -1,0 +1,158 @@
+/* Estilo compartilhado das tabelas de dados (contas e transferências). */
+
+.wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  min-width: 640px;
+  font-size: 13.5px;
+}
+
+.table th {
+  height: 38px;
+  padding: 0 20px;
+  background: var(--surface-muted);
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-muted);
+  font-size: 12px;
+  font-weight: 500;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table td {
+  height: 52px;
+  padding: 8px 20px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.table tbody tr {
+  transition: background-color var(--transition);
+}
+
+.table tbody tr:hover {
+  background: var(--surface-muted);
+}
+
+.numeric {
+  text-align: right !important;
+}
+
+.primaryLink {
+  display: block;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.primaryLink:hover {
+  color: var(--brand);
+}
+
+.secondary {
+  display: block;
+  color: var(--ink-muted);
+  font-size: 12px;
+}
+
+.muted {
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+
+.flow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flow svg {
+  color: var(--ink-faint);
+  flex-shrink: 0;
+}
+
+.idLink {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ink-secondary);
+}
+
+.idLink:hover {
+  color: var(--brand);
+}
+
+/* Versão em lista para telas pequenas. */
+.list {
+  display: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.list li:last-child .listItem {
+  border-bottom: 0;
+}
+
+.listItem:hover {
+  background: var(--surface-muted);
+  text-decoration: none;
+}
+
+.listMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+}
+
+.listTitle {
+  font-weight: 500;
+}
+
+.listAmount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.listAmountLabel {
+  color: var(--ink-faint);
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.listMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-muted);
+  font-size: 12.5px;
+}
+
+@media (max-width: 860px) {
+  .desktopOnly {
+    display: none;
+  }
+
+  .mobileOnly {
+    display: block;
+  }
+}

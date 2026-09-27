@@ -1,0 +1,66 @@
+/* Layout das telas de operação: formulário à esquerda, resumo fixo à direita. */
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.summaryColumn {
+  position: sticky;
+  top: calc(var(--topbar-height) + 24px);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 6px;
+}
+
+.formFooter {
+  color: var(--ink-muted);
+  font-size: 12.5px;
+  text-align: center;
+}
+
+.dateRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.loadingForm {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.loadingField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (max-width: 1080px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .summaryColumn {
+    position: static;
+  }
+}
+
+@media (max-width: 480px) {
+  .dateRow {
+    grid-template-columns: 1fr;
+  }
+}

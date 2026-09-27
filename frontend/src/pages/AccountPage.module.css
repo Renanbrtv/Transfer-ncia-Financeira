@@ -1,0 +1,98 @@
+.selector {
+  max-width: 560px;
+  margin-bottom: 20px;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.overview {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.overviewHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.holder {
+  font-size: 18px;
+}
+
+.accountMeta {
+  color: var(--ink-muted);
+  font-size: 13px;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.statusAlert {
+  padding: 16px 22px 0;
+}
+
+.figures {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.figure {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px 22px 22px;
+  min-width: 0;
+}
+
+.figure + .figure {
+  border-left: 1px solid var(--line);
+}
+
+.figureHighlight {
+  background: var(--brand-tint);
+  border-bottom-right-radius: var(--radius-lg);
+}
+
+.figureHighlight .figureLabel {
+  color: var(--brand);
+}
+
+.figureLabel {
+  color: var(--ink-muted);
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+.figureNote {
+  color: var(--ink-muted);
+  font-size: 12.5px;
+}
+
+@media (max-width: 700px) {
+  .figures {
+    grid-template-columns: 1fr;
+  }
+
+  .figure + .figure {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .figureHighlight {
+    border-bottom-left-radius: var(--radius-lg);
+  }
+}

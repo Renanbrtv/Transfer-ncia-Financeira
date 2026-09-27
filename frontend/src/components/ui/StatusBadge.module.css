@@ -1,0 +1,44 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.positive {
+  background: var(--positive-tint);
+  color: var(--positive);
+}
+
+.info {
+  background: var(--info-tint);
+  color: var(--info);
+}
+
+.warning {
+  background: var(--warning-tint);
+  color: var(--warning);
+}
+
+.negative {
+  background: var(--negative-tint);
+  color: var(--negative);
+}
+
+.neutral {
+  background: var(--neutral-tint);
+  color: var(--neutral);
+}

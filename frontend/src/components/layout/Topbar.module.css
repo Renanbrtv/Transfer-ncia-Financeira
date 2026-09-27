@@ -1,0 +1,147 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: var(--topbar-height);
+  padding: 0 28px;
+  background: rgba(244, 245, 242, 0.92);
+  backdrop-filter: saturate(140%) blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+
+.menuButton,
+.mobileLogo {
+  display: none;
+}
+
+.menuButton {
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin-left: -6px;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--ink-secondary);
+  cursor: pointer;
+}
+
+.menuButton:hover {
+  background: var(--surface-sunken);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-muted);
+  font-size: 13px;
+}
+
+.breadcrumb svg {
+  color: var(--ink-faint);
+}
+
+.breadcrumbCurrent {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.environment {
+  padding: 3px 8px;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-sm);
+  color: var(--ink-muted);
+  font-size: 12px;
+}
+
+.health {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink-secondary);
+  font-size: 12.5px;
+  cursor: pointer;
+}
+
+.health:hover {
+  border-color: var(--line-strong);
+}
+
+.healthDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ink-faint);
+}
+
+.online .healthDot {
+  background: var(--positive);
+  box-shadow: 0 0 0 3px var(--positive-tint);
+}
+
+.offline {
+  color: var(--negative);
+  border-color: #f0c4bf;
+}
+
+.offline .healthDot {
+  background: var(--negative);
+  box-shadow: 0 0 0 3px var(--negative-tint);
+}
+
+.checking .healthDot {
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (max-width: 960px) {
+  .topbar {
+    padding: 0 16px;
+  }
+
+  .menuButton {
+    display: grid;
+  }
+
+  .mobileLogo {
+    display: block;
+  }
+
+  .breadcrumb,
+  .environment {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .healthLabel {
+    display: none;
+  }
+
+  .health {
+    width: 30px;
+    padding: 0;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,23 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.rsuser
+.vs/
+.idea/
+*.DotSettings.user
+TestResults/
+coverage*/
+*.trx
+
+# Node / frontend
+node_modules/
+dist/
+*.local
+npm-debug.log*
+
+# Ambiente
+.env
+.DS_Store
+Thumbs.db

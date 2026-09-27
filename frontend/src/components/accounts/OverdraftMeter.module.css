@@ -1,0 +1,42 @@
+.meter {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.track {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--surface-sunken);
+  overflow: hidden;
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--warning);
+  transition: width 300ms ease;
+}
+
+.high {
+  background: var(--negative);
+}
+
+.legend {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--ink-muted);
+  font-size: 12.5px;
+}
+
+.legend strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.caption {
+  color: var(--ink-muted);
+  font-size: 13px;
+}

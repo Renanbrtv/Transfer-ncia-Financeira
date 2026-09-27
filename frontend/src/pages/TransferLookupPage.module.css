@@ -1,0 +1,67 @@
+.searchCard {
+  margin-bottom: 20px;
+}
+
+.search {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.search > :first-child {
+  flex: 1;
+}
+
+/* Alinha o botão com o input (compensa a altura do label). */
+.searchButton {
+  height: 42px;
+  margin-top: 25px;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.headline {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding-bottom: 8px;
+}
+
+.failure {
+  margin: 12px 0 4px;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+@media (max-width: 960px) {
+  .detailGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .search {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchButton {
+    margin-top: 0;
+  }
+}

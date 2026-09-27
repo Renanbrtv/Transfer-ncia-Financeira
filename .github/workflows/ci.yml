@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  backend:
+    name: Backend (build + testes)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore
+        run: dotnet restore Transfers.sln
+
+      - name: Build
+        run: dotnet build Transfers.sln --no-restore -c Release
+
+      - name: Testes unitários
+        run: dotnet test tests/Transfers.UnitTests --no-build -c Release --logger "console;verbosity=normal"
+
+      # O runner do GitHub já tem Docker: o Testcontainers sobe um SQL Server real para estes testes.
+      - name: Testes de integração
+        run: dotnet test tests/Transfers.IntegrationTests --no-build -c Release --logger "console;verbosity=normal"
+
+  frontend:
+    name: Frontend (type-check + build)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependências
+        run: npm install --no-audit --no-fund
+
+      - name: Build
+        run: npm run build
